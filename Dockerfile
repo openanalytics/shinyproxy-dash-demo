@@ -11,6 +11,9 @@ RUN pip install dash-html-components==0.9.0  # HTML components
 RUN pip install dash-core-components==0.21.0  # Supercharged components
 RUN pip install plotly --upgrade  # Plotly graphing library used in examples
 
+# app dependencies
+RUN pip install pandas
+
 RUN mkdir app
 COPY app/app.py /app
 
