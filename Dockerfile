@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-MAINTAINER Tobias Verbeke "tobias.verbeke@openanalytics.eu"
+LABEL maintainer "Tobias Verbeke <tobias.verbeke@openanalytics.eu>"
 
 RUN apt-get update && apt-get install -y python python-pip
 
