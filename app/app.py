@@ -45,7 +45,7 @@ app.layout = html.Div([
 
 # in order to work on shinyproxy
 # see https://support.openanalytics.eu/t/what-is-the-best-way-of-delivering-static-assets-to-the-client-for-custom-apps/363/5
-app.config.supress_callback_exceptions = True
+app.config.suppress_callback_exceptions = True
 app.config.update({
     # as the proxy server will remove the prefix
     'routes_pathname_prefix': ''
