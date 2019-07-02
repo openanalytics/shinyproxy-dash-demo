@@ -19,4 +19,4 @@ To build the image from the Dockerfile, navigate into the root directory of this
 sudo docker build -t openanalytics/shinyproxy-dash-demo .
 ```
 
-(c) Copyright Open Analytics NV, 2018.
+(c) Copyright Open Analytics NV, 2018-2019.
