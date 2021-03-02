@@ -1,18 +1,14 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 LABEL maintainer "Tobias Verbeke <tobias.verbeke@openanalytics.eu>"
 
-RUN apt-get update && apt-get install -y python python-pip
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip && \
+    rm -rf /var/lib/apt/lists/*
 
 # Dash and dependencies
-RUN pip install dash==0.36.0  # The core dash backend
-RUN pip install dash-renderer==0.17.0  # The dash front-end
-RUN pip install dash-html-components==0.13.5  # HTML components
-RUN pip install dash-core-components==0.43.0  # Supercharged components
-RUN pip install plotly --upgrade  # Plotly graphing library used in examples
-
-# app dependencies
-RUN pip install pandas
+RUN pip3 install dash==1.19.0 && \
+    pip3 install pandas
 
 RUN mkdir app
 COPY app/app.py /app
@@ -20,4 +16,4 @@ COPY app/app.py /app
 EXPOSE 8050
 
 WORKDIR /app
-CMD ["python", "app.py"]
+CMD ["python3", "app.py"]

@@ -1,4 +1,5 @@
 # from https://dash.plot.ly/getting-started
+import os
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -47,12 +48,8 @@ app.layout = html.Div([
 # see https://support.openanalytics.eu/t/what-is-the-best-way-of-delivering-static-assets-to-the-client-for-custom-apps/363/5
 app.config.suppress_callback_exceptions = True
 app.config.update({
-    # as the proxy server will remove the prefix
-    'routes_pathname_prefix': ''
-
-    # the front-end will prefix this string to the requests
-    # that are made to the proxy server
-    , 'requests_pathname_prefix': ''
+    'routes_pathname_prefix': os.environ['SHINYPROXY_PUBLIC_PATH'],
+    'requests_pathname_prefix': os.environ['SHINYPROXY_PUBLIC_PATH']
 })
 
 if __name__ == '__main__':
