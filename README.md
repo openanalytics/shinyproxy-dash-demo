@@ -1,4 +1,4 @@
-# ShinyProxy Dash Demo Image
+# Running Dash apps inside ShinyProxy
 
 This repository explains how to run Dash apps in ShinyProxy. When running Dash 1.3 or later, you will need to use at least ShinyProxy 2.5.0.
 
@@ -29,26 +29,26 @@ app = dash.Dash(
 )
 ```
 
+## Building the Docker image
+
 To pull the image made in this repository from Docker Hub, use
 
-```
+```bash
 sudo docker pull openanalytics/shinyproxy-dash-demo
 ```
 
-The relevant Docker Hub repository can be found at
-
-
-https://hub.docker.com/r/openanalytics/shinyproxy-dash-demo
-
+The relevant Docker Hub repository can be found at [https://hub.docker.com/r/openanalytics/shinyproxy-dash-demo](https://hub.docker.com/r/openanalytics/shinyproxy-dash-demo)
 
 To build the image from the Dockerfile, navigate into the root directory of this repository and run
 
-
-```
+```bash
 sudo docker build -t openanalytics/shinyproxy-dash-demo .
 ```
 
-For deployment on ShinyProxy the port must be set to 8050, e.g.:
+## ShinyProxy Configuration
+
+Create a ShinyProxy configuration file (see [application.yml](application.yml)
+for a complete file), containing:
 
 ```yaml
 specs:
@@ -58,5 +58,4 @@ specs:
   container-image: openanalytics/shinyproxy-dash-demo
 ```
 
-
-(c) Copyright Open Analytics NV, 2018-2019.
+**(c) Copyright Open Analytics NV, 2021.**
