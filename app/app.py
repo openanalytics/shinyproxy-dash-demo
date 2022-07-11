@@ -1,12 +1,16 @@
 # from https://dash.plot.ly/getting-started
 import os
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
-import plotly.graph_objs as go
-import pandas as pd
 
-app = dash.Dash()
+import dash
+import pandas as pd
+import plotly.graph_objs as go
+from dash import dcc, html
+
+app = dash.Dash(
+    __name__,
+    suppress_callback_exceptions=True,
+    requests_pathname_prefix=os.environ['SHINYPROXY_PUBLIC_PATH']
+)
 
 df = pd.read_csv(
     'https://gist.githubusercontent.com/chriddyp/' +
@@ -44,13 +48,6 @@ app.layout = html.Div([
     )
 ])
 
-# in order to work on shinyproxy
-# see https://support.openanalytics.eu/t/what-is-the-best-way-of-delivering-static-assets-to-the-client-for-custom-apps/363/5
-app.config.suppress_callback_exceptions = True
-app.config.update({
-    'routes_pathname_prefix': os.environ['SHINYPROXY_PUBLIC_PATH'],
-    'requests_pathname_prefix': os.environ['SHINYPROXY_PUBLIC_PATH']
-})
 
 if __name__ == '__main__':
     app.run_server(debug=True, host = '0.0.0.0')
