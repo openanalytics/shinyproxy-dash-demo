@@ -12,6 +12,7 @@ RUN pip3 install dash==2.5.1 && \
 
 RUN mkdir app
 COPY app/app.py /app
+COPY app/gdp-life-exp-2007.csv /app
 
 EXPOSE 8050
 
