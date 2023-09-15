@@ -7,7 +7,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Dash and dependencies
-RUN pip3 install dash==2.5.1 && \
+RUN pip3 install dash==2.13.0 && \
     pip3 install pandas
 
 RUN mkdir app

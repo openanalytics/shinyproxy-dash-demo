@@ -21,6 +21,7 @@ proxy:
     display-name: Dash Demo Application
     port: 8050
     container-image: openanalytics/shinyproxy-dash-demo
+    target-path: "#{proxy.getRuntimeValue('SHINYPROXY_PUBLIC_PATH')}"
 logging:
   file:
     name: shinyproxy.log
