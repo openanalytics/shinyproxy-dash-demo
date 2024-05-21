@@ -40,12 +40,13 @@ Create a ShinyProxy configuration file (see [application.yml](application.yml)
 for a complete file), containing:
 
 ```yaml
-specs:
-- id: dash-demo
-  display-name: Dash Demo Application
-  port: 8050
-  container-image: openanalytics/shinyproxy-dash-demo
-  target-path: "#{proxy.getRuntimeValue('SHINYPROXY_PUBLIC_PATH')}"
+proxy:
+  specs:
+  - id: dash-demo
+    display-name: Dash Demo Application
+    port: 8050
+    container-image: openanalytics/shinyproxy-dash-demo
+    target-path: "#{proxy.getRuntimeValue('SHINYPROXY_PUBLIC_PATH')}"
 ```
 
 **(c) Copyright Open Analytics NV, 2018-2023.**
