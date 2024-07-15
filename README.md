@@ -66,4 +66,4 @@ proxy:
     target-path: "#{proxy.getRuntimeValue('SHINYPROXY_PUBLIC_PATH')}"
 ```
 
-**(c) Copyright Open Analytics NV, 2018-2023.**
+**(c) Copyright Open Analytics NV, 2018-2024.**
