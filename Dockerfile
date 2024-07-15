@@ -11,8 +11,7 @@ RUN pip3 install dash==2.13.0 && \
     pip3 install pandas
 
 RUN mkdir app
-COPY app/app.py /app
-COPY app/gdp-life-exp-2007.csv /app
+COPY app /app
 
 EXPOSE 8050
 

@@ -16,6 +16,23 @@ app = dash.Dash(
 )
 ```
 
+In order to ensure assets (e.g. css and js files, images ...) load correctly,
+use the `dash.get_asset_url` function, e.g.:
+
+```python
+import dash
+
+# ...
+    html.Img(src=dash.get_asset_url("logo.png")),
+# ...
+```
+
+Similarly, to link to other pages, use the `dash.get_relative_path` function, e.g.:
+
+```python
+dcc.Link(href=dash.get_relative_path('/page-1'))
+```
+
 ## Building the Docker image
 
 To pull the image made in this repository from Docker Hub, use

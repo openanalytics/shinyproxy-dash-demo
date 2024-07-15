@@ -15,6 +15,7 @@ app = dash.Dash(
 df = pd.read_csv('gdp-life-exp-2007.csv')
 
 app.layout = html.Div([
+    html.Img(src=dash.get_asset_url("logo.png")),
     dcc.Graph(
         id='life-exp-vs-gdp',
         figure={
